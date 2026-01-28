@@ -1,3 +1,4 @@
+import { Outlet } from "react-router-dom";
 import { GlobalStyle } from "./styles/GlobalStyles";
 import { ThemeProvider } from "styled-components";
 import lightTheme from "./styles/lightTheme";
@@ -8,10 +9,8 @@ function App() {
     <>
     <ThemeProvider theme={lightTheme}>
     <GlobalStyle theme={lightTheme}/>
-
-      <div>
-        movie app
-      </div>
+    <Outlet />
+      
     </ThemeProvider>
    
     </>
