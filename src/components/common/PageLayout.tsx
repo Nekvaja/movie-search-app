@@ -1,4 +1,5 @@
 import type { ReactNode } from "react"
+import { Header } from "./Header";
 
 interface PageLayoutProps {
     children: ReactNode;
@@ -6,9 +7,9 @@ interface PageLayoutProps {
 
 export const PageLayout = ({children} : PageLayoutProps) => {
     return (
-        <div>
-             {children}
-        </div>
-       
-    )
+      <>
+        <Header />
+        <div>{children}</div>
+      </>
+    );
 }

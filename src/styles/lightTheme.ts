@@ -1,6 +1,4 @@
-import type { Theme } from "./themeTypes";
-
-const lightTheme: Theme= {
+const lightTheme = {
     colors: {
         primary: '#5E5BD6',
         secondary: '#D69C5B',
