@@ -11,7 +11,15 @@ export const GlobalStyle = createGlobalStyle<{theme: Theme}>`
   body {
     margin: 0;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     background: ${({theme}) => theme.colors.background};
     font-family: 'Montserrat', sans-serif;
+  }
+  
+  #root {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
   }
 `;
