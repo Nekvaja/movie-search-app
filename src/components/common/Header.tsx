@@ -11,18 +11,20 @@ const HeaderContainer = styled.header`
   display: flex;
   align-items: center;
   padding: 2rem;
+`;
 
-h1 {
-    font-size: 2.25rem;
+const HeaderTitle = styled.h1`
+     font-size: 2.25rem;
     font-weight: 300;
     color: white;
-}
 `;
 
 export const Header = () => {
     return (
         <HeaderContainer>
-            <h1>Movie Search</h1>
+            <HeaderTitle>
+                Movie Search
+            </HeaderTitle>
         </HeaderContainer>
     )
 }
