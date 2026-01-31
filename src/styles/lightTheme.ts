@@ -6,6 +6,7 @@ const lightTheme = {
         background: '#F5F5F4',
         textPrimary: '#1D1D1A',
         textSecondary: 'white',
+        placeholderText: '#6A6B67',
     }
 }
 

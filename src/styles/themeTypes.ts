@@ -6,5 +6,6 @@ export interface Theme {
         background: string,
         textPrimary: string,
         textSecondary: string,
+        placeholderText: string,
     }
 }
