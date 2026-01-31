@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
+import { SearchIcon } from "./SearchIcon";
 
 const SearchWrapper = styled.div`
     display: flex;
@@ -37,31 +38,24 @@ const SearchInput = styled.input`
     } 
     `;
 
-const SearchIcon = styled.div`
-    margin: 0;
-    padding: 0 0 0 0.5rem;
-`;
-
 
 export const SearchForm = () => {
     const [query, setQuery] = useState<string>('');
 
     return (
-        <form>
-            <SearchWrapper>
-                <SearchIcon>
-                    Icon
-                </SearchIcon>
+      <form>
+        <SearchWrapper>
+          <SearchIcon />
 
-                <SearchInput 
-                    value={query}
-                    onChange={(e) => setQuery(e.target.value)}
-                    name="query"
-                    type="text"
-                    placeholder="Search for a movie"
-                    aria-label="Search for a movie"
-                />
-            </SearchWrapper>
-        </form>
-    )
+          <SearchInput
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            name="query"
+            type="text"
+            placeholder="Search for a movie"
+            aria-label="Search for a movie"
+          />
+        </SearchWrapper>
+      </form>
+    );
 }
