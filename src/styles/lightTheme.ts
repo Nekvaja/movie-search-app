@@ -7,6 +7,7 @@ const lightTheme = {
         textPrimary: '#1D1D1A',
         textSecondary: 'white',
         placeholderText: '#6A6B67',
+        hoverPrimary: '#6d6bdc'
     }
 }
 

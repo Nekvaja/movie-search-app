@@ -7,5 +7,6 @@ export interface Theme {
         textPrimary: string,
         textSecondary: string,
         placeholderText: string,
+        hoverPrimary: string,
     }
 }
