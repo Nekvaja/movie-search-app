@@ -31,6 +31,11 @@ const Year = styled.span`
 `;
 
 const Rating = styled.span`
+    background-color: ${({theme}) => theme.colors.accent};
+    border-radius: 5px;
+    padding: 0.2rem 0;
+    width: 2.5rem;
+    text-align: center;
 `;
 
 export const MovieCard = () => {
