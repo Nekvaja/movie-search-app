@@ -2,24 +2,26 @@ import { useState } from "react";
 import styled from "styled-components";
 import { SearchIcon } from "./SearchIcon";
 
-const SearchWrapper = styled.div`
+const FormWrapper = styled.form`
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    width: 80%;
+    width: 70%;
     height: 3.5rem;
     border: 2px solid ${({theme}) => theme.colors.primary};
     border-radius: 8px 0 8px 8px;
     background-color: ${({theme}) => theme.colors.background};
+    overflow: hidden;
 
      &:focus-within {
-        border: solid 3px ${({theme}) => theme.colors.primary};
+        border: solid 2px ${({theme}) => theme.colors.secondary};
+        box-shadow: 0 0 0 2px rgba(255, 165, 0, 0.4);
     }
 `;
 
 const SearchInput = styled.input`
-    width: 90%;
     height: 100%;
+    width: 100%;
     margin: 0;
     padding: 0;
     color: ${({theme}) => theme.colors.textPrimary};
@@ -43,8 +45,8 @@ export const SearchForm = () => {
     const [query, setQuery] = useState<string>('');
 
     return (
-      <form>
-        <SearchWrapper>
+      
+        <FormWrapper>
           <SearchIcon />
 
           <SearchInput
@@ -55,7 +57,7 @@ export const SearchForm = () => {
             placeholder="Search for a movie"
             aria-label="Search for a movie"
           />
-        </SearchWrapper>
-      </form>
+        </FormWrapper>
+     
     );
 }

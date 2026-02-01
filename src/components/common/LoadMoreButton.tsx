@@ -11,7 +11,6 @@ const Button = styled.button`
     font-size: 1.5rem;
     font-weight: 300;
     padding: 1rem;
-    margin-bottom: 5%;
     cursor: pointer;
 
     &:hover,

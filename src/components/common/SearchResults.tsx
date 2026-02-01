@@ -2,9 +2,12 @@ import styled from "styled-components";
 import { MovieCard } from "./MovieCard";
 
 const ResultsGrid = styled.div`
-    display: flex; // temporary layout for card styling – will be replaced by grid
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
-    margin: auto auto;
+    margin: auto 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
 `;
 
 export const SearchResults = () => {
