@@ -19,7 +19,7 @@ export const SearchResults = () => {
         <ResultsGrid>
 
             {movies.map((movie) => (
-                <MovieCard key={movie.id} title={movie.title} year={movie.year} rate={movie.rate}/>
+                <MovieCard key={movie.id} title={movie.title} year={movie.year} rate={movie.rate} imageUrl={movie.imageUrl}/>
             ))}
            
         </ResultsGrid>

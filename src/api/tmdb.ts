@@ -1,17 +1,20 @@
 const baseUrl = "https://api.themoviedb.org/3";
+const imageBaseUrl = "https://image.tmdb.org/t/p/w500";
 
 interface ApiMovie {
     id: number;
     title: string;
     release_date: string;
     vote_average: number;
+    poster_path: string;
 }
 
 export interface Movie {
     id: number;
     title: string;
-    year: string,
-    rate: number,
+    year: string;
+    rate: number;
+    imageUrl: string;
 }
 
 interface ApiResponseStructure {
@@ -33,6 +36,7 @@ export const getMovies = async () : Promise<Movie[]> => {
             title: apiMovieData.title,
             year: (apiMovieData.release_date).slice(0, 4),
             rate: Math.round((apiMovieData.vote_average) * 10),
+            imageUrl: `${imageBaseUrl}${apiMovieData.poster_path}`,
         }
     })
 
