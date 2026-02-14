@@ -17,6 +17,14 @@ This project focuses on working with an external API, structuring a React applic
 
 ---
 
+## Live Demo
+
+The project is deployed on Netlify:
+
+[Live Demo](https://moviesearchproject.netlify.app/)
+
+---
+
 ## Features
 
 - Integration with TheMovieDB API
