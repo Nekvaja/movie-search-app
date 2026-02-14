@@ -1,4 +1,7 @@
 import styled from "styled-components";
+import type { Movie } from "../../api/tmdb";
+
+type MovieCardProps = Pick<Movie, "title" | "year" | "rate">;
 
 const Card = styled.article`
     width: 100%;
@@ -38,16 +41,16 @@ const Rating = styled.span`
     text-align: center;
 `;
 
-export const MovieCard = () => {
+export const MovieCard = ({title, year, rate} : MovieCardProps) => {
     return (
         <Card>
             <Poster src="img.jpg" alt="movie poster"/>
 
-            <Title>Harry potter and sorcerer's stone </Title>
+            <Title>{title}</Title>
 
             <Meta>
-                <Year>2019</Year>
-                <Rating>4,9</Rating>
+                <Year>{year}</Year>
+                <Rating>{rate} %</Rating>
             </Meta>
 
         </Card>

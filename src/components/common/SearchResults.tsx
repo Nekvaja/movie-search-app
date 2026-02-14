@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { MovieCard } from "./MovieCard";
+import { useSearch } from "../../context/SearchContext";
 
 const ResultsGrid = styled.div`
     display: grid;
@@ -11,13 +12,16 @@ const ResultsGrid = styled.div`
 `;
 
 export const SearchResults = () => {
+
+    const {movies} = useSearch()
+
     return (
         <ResultsGrid>
-            <MovieCard />
-            <MovieCard />
-            <MovieCard />
-            <MovieCard />
-            <MovieCard />
+
+            {movies.map((movie) => (
+                <MovieCard key={movie.id} title={movie.title} year={movie.year} rate={movie.rate}/>
+            ))}
+           
         </ResultsGrid>
     )
 };
