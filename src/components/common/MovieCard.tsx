@@ -13,6 +13,8 @@ const Title = styled.h2`
     font-size: 1rem;
     font-weight: bold;
     margin: 0.5rem 0;
+    display: flex;
+    flex-grow: 1;
 `;
 
 const Poster = styled.img`
@@ -26,7 +28,6 @@ const Meta = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
 `;
 
 const Year = styled.span`
@@ -36,8 +37,7 @@ const Year = styled.span`
 const Rating = styled.span`
     background-color: ${({theme}) => theme.colors.accent};
     border-radius: 5px;
-    padding: 0.2rem 0;
-    width: 2.5rem;
+    padding: 0.2rem 0.4rem;
     text-align: center;
 `;
 
