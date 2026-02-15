@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { SearchIcon } from "./SearchIcon";
+import { useSearch } from "../../context/SearchContext";
 
 const FormWrapper = styled.form`
     display: flex;
@@ -43,6 +44,14 @@ const SearchInput = styled.input`
 
 export const SearchForm = () => {
     const [query, setQuery] = useState<string>('');
+    const {searchMovie} = useSearch();
+
+    useEffect(() => {
+        const timeoutId = setTimeout(() => {searchMovie(query)}, 500)
+
+        return () => clearTimeout(timeoutId)
+
+    }, [query, searchMovie])
 
     return (
       

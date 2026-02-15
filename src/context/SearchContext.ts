@@ -7,12 +7,25 @@ export interface SearchStructure {
     isLoading: boolean;   
 }
 
- export const MovieSearchContext = createContext<SearchStructure>({
-    movies: [],
-    isLoading: true,
-  });
+export interface ContextStructure extends SearchStructure {
+  searchMovie: (query : string) => Promise<void> | null
+}
 
-export const useSearch = () => useContext(MovieSearchContext);
+export const MovieSearchContext = createContext<ContextStructure | null>(null)
+
+export const useSearch = () => {
+  const context = useContext(MovieSearchContext);
+
+  if (!context) {
+    throw new Error("useSearch must be used within SearchProvider")
+  } else {
+    return context;
+  }
+}
+  
+  
+  
+  
 
 
 

@@ -1,7 +1,8 @@
-import { useState, useEffect, type ReactNode } from "react";
+import { useState, useCallback, type ReactNode } from "react";
 import { getMovies } from "../api/tmdb";
 import { MovieSearchContext } from "./SearchContext";
 import type { SearchStructure } from "./SearchContext";
+
 
 
 export const SearchProvider = ({ children }: {children : ReactNode}) => {
@@ -10,29 +11,23 @@ export const SearchProvider = ({ children }: {children : ReactNode}) => {
     isLoading: true,
   });
 
-   
-    useEffect(() => {
-      const loadData = async () => {
-        const data = await getMovies();
+  const searchMovie = useCallback(async (query : string) => {
 
-        console.log(data);
-        setSearchDetails({
+    const data = await getMovies();
+    console.log(query)
+
+    setSearchDetails({
             movies: data,
             isLoading: false,
         })
-      };
-
-      loadData();
-
-      
-    }, []);
-  
+  }, [])
 
   return (
   
     <MovieSearchContext.Provider value={{
         movies: searchDetails.movies,
         isLoading: searchDetails.isLoading,
+        searchMovie,
     }}>
 
       { children }
