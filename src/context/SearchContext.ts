@@ -2,13 +2,13 @@ import { createContext, useContext } from "react";
 import type { Movie } from "../api/tmdb";
 
 
-export interface SearchStructure {
-    movies: Movie[];
-    isLoading: boolean;   
-}
 
-export interface ContextStructure extends SearchStructure {
-  searchMovie: (query : string) => Promise<void> | null
+
+export interface ContextStructure {
+  movies: Movie[],
+  isLoading: boolean,
+  query: string,
+  setQuery: React.Dispatch<React.SetStateAction<string>>,
 }
 
 export const MovieSearchContext = createContext<ContextStructure | null>(null)
