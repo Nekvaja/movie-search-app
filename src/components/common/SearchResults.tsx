@@ -12,6 +12,12 @@ const ResultsGrid = styled.div`
     padding-bottom: 2rem;
 `;
 
+const StyledLink = styled(Link)`
+    text-decoration: none;
+    color: inherit;
+    display: block;
+`;
+
 export const SearchResults = () => {
 
     const {movies} = useSearch()
@@ -20,9 +26,9 @@ export const SearchResults = () => {
         <ResultsGrid>
 
             {movies.map((movie) => (
-                <Link key={movie.id} to={`/movie/${movie.id}`}> 
+                <StyledLink key={movie.id} to={`/movie/${movie.id}`}> 
                      <MovieCard title={movie.title} year={movie.year} rate={movie.rate} imageUrl={movie.imageUrl}/>
-                </Link> 
+                </StyledLink> 
                
             ))}
            
