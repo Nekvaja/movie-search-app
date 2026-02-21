@@ -21,8 +21,13 @@ interface ApiResponseStructure {
     results: ApiMovie[],
 }
 
-export const getMovies = async () : Promise<Movie[]> => {
-    const response = await fetch(`${baseUrl}/search/movie?query=Jack+Reacher`, {
+export const getMovies = async (query : string) : Promise<Movie[]> => {
+
+    const searchParams = new URLSearchParams({
+        query: query,
+    })
+
+    const response = await fetch(`${baseUrl}/search/movie?${searchParams}`, {
         headers: {
             Authorization: `Bearer ${import.meta.env.VITE_TMDB_TOKEN}`
         }

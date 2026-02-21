@@ -13,8 +13,7 @@ export const SearchProvider = ({ children }: {children : ReactNode}) => {
 
   const searchMovie = useCallback(async (query : string) => {
 
-    const data = await getMovies();
-    console.log(query)
+    const data = await getMovies(query);
 
     setSearchDetails({
             movies: data,
