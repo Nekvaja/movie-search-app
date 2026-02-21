@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { MovieCard } from "./MovieCard";
 import { useSearch } from "../../context/SearchContext";
+import { Link } from "react-router-dom";
 
 const ResultsGrid = styled.div`
     display: grid;
@@ -19,7 +20,10 @@ export const SearchResults = () => {
         <ResultsGrid>
 
             {movies.map((movie) => (
-                <MovieCard key={movie.id} title={movie.title} year={movie.year} rate={movie.rate} imageUrl={movie.imageUrl}/>
+                <Link key={movie.id} to={`/movie/${movie.id}`}> 
+                     <MovieCard title={movie.title} year={movie.year} rate={movie.rate} imageUrl={movie.imageUrl}/>
+                </Link> 
+               
             ))}
            
         </ResultsGrid>
