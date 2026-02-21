@@ -12,6 +12,25 @@ const ResultsGrid = styled.div`
     padding-bottom: 2rem;
 `;
 
+const Button = styled.button`
+    width: 80%;
+    max-width: 500px;
+    border: none;
+    border-radius: 10px;
+    background-color: ${({theme}) => theme.colors.primary};
+    color: ${({theme}) => theme.colors.textSecondary};
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: 300;
+    padding: 1rem;
+    cursor: pointer;
+
+    &:hover,
+    &:focus-visible {
+        background-color: ${({theme}) => theme.colors.hoverPrimary};
+    }
+`;
+
 const StyledLink = styled(Link)`
     text-decoration: none;
     color: inherit;
@@ -23,6 +42,7 @@ export const SearchResults = () => {
     const {movies} = useSearch()
 
     return (
+        <>
         <ResultsGrid>
 
             {movies.map((movie) => (
@@ -33,5 +53,8 @@ export const SearchResults = () => {
             ))}
            
         </ResultsGrid>
+
+        <Button>Load more</Button>
+        </>
     )
 };
