@@ -33,6 +33,10 @@ export const getMovies = async (query : string) : Promise<Movie[]> => {
         }
     });
 
+    if (!response.ok) {
+        throw new Error("Failed to fetch movies")
+    };
+
     const json : ApiResponseStructure = await response.json();
 
     const data : Movie[] = json.results.map((apiMovieData : ApiMovie) => {
