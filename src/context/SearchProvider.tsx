@@ -8,8 +8,13 @@ import type { Movie } from "../api/tmdb";
 export const SearchProvider = ({ children }: {children : ReactNode}) => {
   const [movies, setMovies] = useState<Movie[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
-
   const [query, setQuery] = useState<string>('');
+  const [visibleCount, setVisibleCount] = useState<number>(4)
+  
+  const updateQuery = (newQuery: string) => {
+    setQuery(newQuery);
+    setVisibleCount(4)
+  }
 
   const searchMovie = useCallback(async (query : string) => {
 
@@ -36,7 +41,9 @@ export const SearchProvider = ({ children }: {children : ReactNode}) => {
         movies: movies,
         isLoading: isLoading,
         query,
-        setQuery
+        updateQuery,
+        visibleCount,
+        setVisibleCount
     }}>
 
       { children }

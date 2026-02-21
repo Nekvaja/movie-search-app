@@ -39,13 +39,13 @@ const StyledLink = styled(Link)`
 
 export const SearchResults = () => {
 
-    const {movies} = useSearch()
+    const {movies, visibleCount, setVisibleCount} = useSearch()
 
     return (
         <>
         <ResultsGrid>
 
-            {movies.map((movie) => (
+            {(movies.slice(0, visibleCount)).map((movie) => (
                 <StyledLink key={movie.id} to={`/movie/${movie.id}`}> 
                      <MovieCard title={movie.title} year={movie.year} rate={movie.rate} imageUrl={movie.imageUrl}/>
                 </StyledLink> 
@@ -54,7 +54,9 @@ export const SearchResults = () => {
            
         </ResultsGrid>
 
-        <Button>Load more</Button>
+        <Button
+            onClick={() => setVisibleCount(prev => prev + 4)}
+        >Load more</Button>
         </>
     )
 };

@@ -42,7 +42,7 @@ const SearchInput = styled.input`
 
 
 export const SearchForm = () => {
-    const { query, setQuery} = useSearch();
+    const { query, updateQuery} = useSearch();
 
     return (
       
@@ -51,7 +51,7 @@ export const SearchForm = () => {
 
           <SearchInput
             value={query}
-            onChange={(e) => setQuery(e.target.value)}
+            onChange={(e) => updateQuery(e.target.value)}
             name="query"
             type="text"
             placeholder="Search for a movie"

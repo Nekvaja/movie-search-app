@@ -8,7 +8,9 @@ export interface ContextStructure {
   movies: Movie[],
   isLoading: boolean,
   query: string,
-  setQuery: React.Dispatch<React.SetStateAction<string>>,
+  updateQuery: (newQuery: string) => void,
+  visibleCount: number,
+  setVisibleCount: React.Dispatch<React.SetStateAction<number>>
 }
 
 export const MovieSearchContext = createContext<ContextStructure | null>(null)
