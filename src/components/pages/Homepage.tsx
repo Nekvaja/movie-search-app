@@ -1,6 +1,6 @@
 import { PageLayout } from "../common/PageLayout"
-import { SearchForm } from "../common/SearchForm"
-import { SearchResults } from "../common/SearchResults"
+import { SearchForm } from "../search/SearchForm"
+import { SearchResults } from "../search/SearchResults"
 
 export const Homepage = () => {
     return (
