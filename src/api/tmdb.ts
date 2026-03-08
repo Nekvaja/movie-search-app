@@ -21,6 +21,11 @@ interface ApiResponseStructure {
     results: ApiMovie[],
 }
 
+export interface MovieDetailData {
+    id: number,
+    title: string
+} 
+
 export const getMovies = async (query : string) : Promise<Movie[]> => {
 
     const searchParams = new URLSearchParams({
@@ -52,4 +57,23 @@ export const getMovies = async (query : string) : Promise<Movie[]> => {
     return data;
 
 };
+
+export const getMovieById = async (id : number) => {
+
+    const response = await fetch(`${baseUrl}/movie/${id}`, {
+        headers: {
+            Authorization: `Bearer ${import.meta.env.VITE_TMDB_TOKEN}`
+        }
+    });
+
+    if (!response.ok) {
+        throw new Error("Failed to fetch movies")
+    };
+
+    const data : MovieDetailData = await response.json();
+
+    console.log(data)
+    return data;
+}
+
 
