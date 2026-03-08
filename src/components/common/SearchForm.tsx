@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { SearchIcon } from "./SearchIcon";
-import { useSearch } from "../../context/SearchContext";
+import { useSearch } from "../../contexts/SearchGlobal/SearchContext";
 
 const FormWrapper = styled.form`
     display: flex;

@@ -1,5 +1,5 @@
 import { createContext, useContext } from "react";
-import type { MovieDetailData } from "../api/tmdb";
+import type { MovieDetailData } from "../../api/tmdb";
 
 export interface MovieContextStructure {
     movie: MovieDetailData,

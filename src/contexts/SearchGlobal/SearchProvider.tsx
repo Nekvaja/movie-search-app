@@ -1,7 +1,7 @@
 import { useState, useEffect ,useCallback, type ReactNode } from "react";
-import { getMovies } from "../api/tmdb";
+import { getMovies } from "../../api/tmdb";
 import { MovieSearchContext } from "./SearchContext";
-import type { Movie } from "../api/tmdb";
+import type { Movie } from "../../api/tmdb";
 
 
 

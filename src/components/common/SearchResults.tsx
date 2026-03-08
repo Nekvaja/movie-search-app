@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { MovieCard } from "./MovieCard";
-import { useSearch } from "../../context/SearchContext";
+import { useSearch } from "../../contexts/SearchGlobal/SearchContext";
 import { Link } from "react-router-dom";
 
 const ResultsGrid = styled.div`

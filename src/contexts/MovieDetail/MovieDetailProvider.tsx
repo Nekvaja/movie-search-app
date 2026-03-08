@@ -1,6 +1,6 @@
 import { MovieDetailContext } from "./MovieDetailContext";
 import type { ReactNode } from "react";
-import type { MovieDetailData } from "../api/tmdb"; 
+import type { MovieDetailData } from "../../api/tmdb"; 
 
 interface Props {
     movie: MovieDetailData,

@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 import { GlobalStyle } from "./styles/GlobalStyles";
 import { ThemeProvider } from "styled-components";
 import lightTheme from "./styles/lightTheme";
-import { SearchProvider } from "./context/SearchProvider";
+import { SearchProvider } from "./contexts/SearchGlobal/SearchProvider";
 
 
 function App() {

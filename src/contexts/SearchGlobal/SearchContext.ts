@@ -1,5 +1,5 @@
 import { createContext, useContext } from "react";
-import type { Movie } from "../api/tmdb";
+import type { Movie } from "../../api/tmdb";
 
 
 
