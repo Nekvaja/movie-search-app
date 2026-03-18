@@ -3,6 +3,8 @@ import { PageLayout } from "../common/PageLayout"
 import { useEffect, useState } from "react";
 import { getMovieById } from "../../api/tmdb";
 import type { MovieDetailData } from "../../api/tmdb";
+import { MovieHeader } from "../movieDetail/MovieHeader";
+import { MovieDetailProvider } from "../../contexts/MovieDetail/MovieDetailProvider";
 
 
 export const MovieDetail = () => {
@@ -35,8 +37,10 @@ export const MovieDetail = () => {
     } 
         return (
         <PageLayout>
-
-            <h2>{movie.title}</h2>
+            <MovieDetailProvider movie={movie}>
+                  <MovieHeader/>
+            </MovieDetailProvider>
+          
             
         </PageLayout>
     )
