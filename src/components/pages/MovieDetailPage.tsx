@@ -5,6 +5,7 @@ import { getMovieById } from "../../api/tmdb";
 import type { MovieDetailData } from "../../api/tmdb";
 import { MovieHeader } from "../movieDetail/MovieHeader";
 import { MovieDetailProvider } from "../../contexts/MovieDetail/MovieDetailProvider";
+import { MovieMainInfo } from "../movieDetail/MovieMainInfo";
 
 
 export const MovieDetail = () => {
@@ -39,6 +40,7 @@ export const MovieDetail = () => {
         <PageLayout>
             <MovieDetailProvider movie={movie}>
                   <MovieHeader/>
+                  <MovieMainInfo/>
             </MovieDetailProvider>
           
             
