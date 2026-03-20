@@ -5,7 +5,7 @@ const MovieDetailsWrapper = styled.div`
     padding: 2rem;
     display: flex;
     flex-direction: column;
-    border-top: 2px solid #A8A8A8;
+    border-top: 1.5px solid rgba(0, 0, 0, 0.1);
     width: 100%;
     
     h3 {

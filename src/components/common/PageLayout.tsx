@@ -17,8 +17,8 @@ const Content = styled.main<{$variant: string}>`
   margin: auto;
   padding-bottom: 5%;
 
-  padding-top: ${({ $variant }) =>
-  $variant === "default" ? "5%" : "0.5rem"};
+  padding: ${({ $variant }) =>
+  $variant === "default" ? "5%" : "0.5rem 0"};
 
 `;
 

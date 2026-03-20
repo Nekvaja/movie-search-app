@@ -9,7 +9,7 @@ const MovieMainInfoWrapper = styled.div`
 
 const MoviePoster = styled.img`
     aspect-ratio: 2 / 3;
-    width: 100%;
+    max-width: 300px;
     object-fit: cover;
 `;
 
@@ -24,7 +24,7 @@ const GenreWrapper = styled.div`
 
 const Genre = styled.div`
     background-color: #D9D9D9;
-    padding: 0.2rem 0.4rem;
+    padding: 0.2rem 0.6rem;
     border-radius: 4px;
     font-weight: bold;
 `;
@@ -36,6 +36,7 @@ const Meta = styled.div`
 
 const Overview = styled.div`
     margin-top: 3rem;
+    line-height: 1.5;
 `;
 
 
