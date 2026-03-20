@@ -37,7 +37,7 @@ export const MovieDetail = () => {
         )
     } 
         return (
-        <PageLayout>
+        <PageLayout variant="detail">
             <MovieDetailProvider movie={movie}>
                   <MovieHeader/>
                   <MovieMainInfo/>

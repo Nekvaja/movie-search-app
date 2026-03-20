@@ -5,24 +5,28 @@ import { Footer } from "./Footer";
 
 interface PageLayoutProps {
     children: ReactNode;
+    variant?: "default" | "detail";
 }
 
-const Content = styled.main`
+const Content = styled.main<{$variant: string}>`
   display: flex;
   flex-direction: column;
   align-items: center;
   flex: 1;
   max-width: 851px;
   margin: auto;
-  padding-top: 5%;
   padding-bottom: 5%;
+
+  padding-top: ${({ $variant }) =>
+  $variant === "default" ? "5%" : "0.5rem"};
+
 `;
 
-export const PageLayout = ({children} : PageLayoutProps) => {
+export const PageLayout = ({children, variant = "default"} : PageLayoutProps) => {
     return (
       <>
         <Header />
-        <Content>
+        <Content $variant={variant}>
             {children}
         </Content>
         <Footer/>
