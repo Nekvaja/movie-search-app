@@ -6,7 +6,8 @@ const FormWrapper = styled.form`
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    width: 70%;
+    width: 100%;
+    max-width: 500px;
     height: 3.5rem;
     border: 2px solid ${({theme}) => theme.colors.primary};
     border-radius: 8px 0 8px 8px;

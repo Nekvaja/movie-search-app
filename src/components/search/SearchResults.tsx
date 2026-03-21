@@ -14,7 +14,7 @@ const ResultsGrid = styled.div`
 
 const Button = styled.button`
     width: 80%;
-    max-width: 500px;
+    max-width: 400px;
     border: none;
     border-radius: 10px;
     background-color: ${({theme}) => theme.colors.primary};
