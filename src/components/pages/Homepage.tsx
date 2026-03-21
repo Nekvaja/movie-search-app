@@ -16,9 +16,9 @@ export const Homepage = () => {
 
         { (!query && !isLoading) && <StateMessage>Start typing to find movies.</StateMessage> }
 
-        { (movies.length === 0 && query.length > 0 && !isLoading) && <StateMessage>No movies found.</StateMessage>}
+        { ((!movies || movies.length === 0) && query && !isLoading) && <StateMessage>No movies found.</StateMessage>}
 
-        { movies.length > 0 && <SearchResults /> }
+        { movies?.length > 0 && <SearchResults /> }
 
             
         </PageLayout>

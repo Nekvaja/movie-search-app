@@ -13,7 +13,8 @@ export const SearchProvider = ({ children }: {children : ReactNode}) => {
   
   const updateQuery = (newQuery: string) => {
     setQuery(newQuery);
-    setVisibleCount(4)
+    setVisibleCount(4);
+    setIsLoading(true);
   }
 
   const searchMovie = useCallback(async (query : string) => {
