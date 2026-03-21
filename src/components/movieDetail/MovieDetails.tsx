@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useMovieDetail } from "../../contexts/MovieDetail/MovieDetailContext";
 
 
 const MovieDetailsWrapper = styled.div`
@@ -21,25 +22,28 @@ const MovieDetailsWrapper = styled.div`
 const Infoblock = styled.div`
     display: flex;
     gap: 1rem;
-    align-items: center;
+    align-items: flex-start;
     line-height: 1.5;
 `;
 
 
 export const MovieDetails = () => {
+
+    const {movie} = useMovieDetail();
+
     return (
         <MovieDetailsWrapper>
             <Infoblock>
                 <h3>Director:</h3>
-                <p>Lorem ipsum dolor sit amet.</p>
+                <p>{movie.director.join(", ")}</p>
             </Infoblock>
             <Infoblock>
                 <h3>Screenplay:</h3>
-                <p>Lorem ipsum dolor sit amet.</p>
+                <p>{movie.screenwriters.join(", ")}</p>
             </Infoblock>
             <Infoblock>
                 <h3>Cast:</h3>
-                <p>Lorem ipsum dolor sit amet.</p>
+                <p>{movie.actors.join(", ")}</p>
             </Infoblock>
         </MovieDetailsWrapper>
     )
