@@ -41,6 +41,7 @@ export const SearchProvider = ({ children }: {children : ReactNode}) => {
         movies: movies,
         isLoading: isLoading,
         query,
+        setQuery,
         updateQuery,
         visibleCount,
         setVisibleCount

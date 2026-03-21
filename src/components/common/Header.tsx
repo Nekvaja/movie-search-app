@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+import { useSearch } from "../../contexts/SearchGlobal/SearchContext";
 
 const HeaderContainer = styled.header`
   height: 152px;
@@ -14,16 +16,28 @@ const HeaderContainer = styled.header`
 `;
 
 const HeaderTitle = styled.h1`
-     font-size: 2.25rem;
+    font-size: 2.25rem;
     font-weight: 300;
     color: white;
+
+    a {
+        font-style: inherit;
+        color: inherit;
+        text-decoration: none;
+    }
 `;
 
 export const Header = () => {
+
+    const {setQuery} = useSearch();
+
     return (
         <HeaderContainer>
             <HeaderTitle>
-                Movie Search
+                <Link 
+                    to="/"
+                    onClick={() => setQuery("")}
+                    >Movie Search</Link>               
             </HeaderTitle>
         </HeaderContainer>
     )
