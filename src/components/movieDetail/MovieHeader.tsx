@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useMovieDetail } from "../../contexts/MovieDetail/MovieDetailContext";
 import { BackIcon } from "./BackIcon";
+import { Link } from "react-router-dom";
 
 const Wrapper = styled.div`
     padding: 0 2rem;
@@ -10,7 +11,7 @@ const Wrapper = styled.div`
     justify-content: flex-start;
 `;
 
-const BackButton = styled.button`
+const BackButton = styled(Link)`
     display: flex;
     align-items: center;
     align-self: flex-start;
@@ -66,7 +67,7 @@ export const MovieHeader = () => {
     return (
       <>
     <Wrapper>
-        <BackButton>
+        <BackButton to={`/`}>
             <BackIcon/>
             Back    
         </BackButton>
