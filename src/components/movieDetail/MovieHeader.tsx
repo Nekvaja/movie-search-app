@@ -72,7 +72,7 @@ export const MovieHeader = () => {
         </BackButton>
         <HeaderRow>
             <Title>{movie.title}</Title>
-            <Rating>100 %</Rating>
+            <Rating>{movie.rate}%</Rating>
         </HeaderRow>
     </Wrapper>    
       </>

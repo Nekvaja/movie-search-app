@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useMovieDetail } from "../../contexts/MovieDetail/MovieDetailContext";
 
 
 const MovieMainInfoWrapper = styled.div`
@@ -39,18 +40,35 @@ const Overview = styled.div`
     line-height: 1.5;
 `;
 
+const Tagline = styled.div`
+    margin-top: 1rem;
+    color: #717070;
+    letter-spacing: 0.05rem;
+`;
+
 
 export const MovieMainInfo = () => {
+
+    const {movie} = useMovieDetail();
+
     return (
         <MovieMainInfoWrapper>
-            <MoviePoster src={"https://image.tmdb.org/t/p/w342/wuMc08IPKEatf9rnMNXvIDxqP4W.jpg"}/>
+            <MoviePoster src={movie.posterPath}/>
             <MovieDescription>
                 <GenreWrapper>
-                    <Genre>Thriller</Genre>
-                    <Genre>Fantasy</Genre>
+                    {movie.genres.map((genre) => 
+                        <Genre key={genre}>{genre}</Genre>
+                    )}
                 </GenreWrapper>
-                <Meta>USA, 1999</Meta>
-                <Overview>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptatem consequuntur est, amet, voluptate repellendus maxime unde eligendi cupiditate natus ullam rem rerum placeat dolore atque eum perferendis. Natus, esse.</Overview>
+                <Meta>
+                    {movie.countries.join(", ")}, {movie.year}, {movie.runtime} min.
+                </Meta>
+
+                {movie.tagline !== "" 
+                    && <Tagline>{movie.tagline}</Tagline> 
+                }
+                   
+                <Overview>{movie.overview}</Overview>
             </MovieDescription>
         </MovieMainInfoWrapper>
 
