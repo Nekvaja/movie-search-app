@@ -6,12 +6,13 @@ import type { Movie } from "../../api/tmdb";
 
 export interface ContextStructure {
   movies: Movie[],
+  resetSearch: () => void,
   isLoading: boolean,
   query: string,
-  setQuery: React.Dispatch<React.SetStateAction<string>>,
   updateQuery: (newQuery: string) => void,
   visibleCount: number,
-  setVisibleCount: React.Dispatch<React.SetStateAction<number>>
+  setVisibleCount: React.Dispatch<React.SetStateAction<number>>,
+  isDebouncing: boolean,
 }
 
 export const MovieSearchContext = createContext<ContextStructure | null>(null)

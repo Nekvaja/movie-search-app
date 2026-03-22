@@ -6,7 +6,7 @@ import { StateMessage } from "../search/StateMessage"
 
 export const Homepage = () => {
 
-    const {query, movies, isLoading} = useSearch(); 
+    const {query, movies, isLoading, isDebouncing} = useSearch(); 
 
     return (
         <PageLayout>
@@ -14,9 +14,11 @@ export const Homepage = () => {
 
         { isLoading && <StateMessage>Loading...</StateMessage>}
 
-        { (!query && !isLoading) && <StateMessage>Start typing to find movies.</StateMessage> }
+        { (!isLoading && isDebouncing) && <StateMessage>Searching...</StateMessage>}
 
-        { ((!movies || movies.length === 0) && query && !isLoading) && <StateMessage>No movies found.</StateMessage>}
+        { (!query && (!isLoading || !isDebouncing)) && <StateMessage>Start typing to find movies.</StateMessage> }
+
+        { ((!movies || movies.length === 0) && query && !isLoading && !isDebouncing ) && <StateMessage>No movies found.</StateMessage>}
 
         { movies?.length > 0 && <SearchResults /> }
 

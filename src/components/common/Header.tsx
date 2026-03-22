@@ -29,14 +29,14 @@ const HeaderTitle = styled.h1`
 
 export const Header = () => {
 
-    const {setQuery} = useSearch();
+    const { resetSearch} = useSearch();
 
     return (
         <HeaderContainer>
             <HeaderTitle>
                 <Link 
                     to="/"
-                    onClick={() => setQuery("")}
+                    onClick={resetSearch}
                     >Movie Search</Link>               
             </HeaderTitle>
         </HeaderContainer>

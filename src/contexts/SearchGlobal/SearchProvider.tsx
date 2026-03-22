@@ -9,16 +9,29 @@ export const SearchProvider = ({ children }: {children : ReactNode}) => {
   const [movies, setMovies] = useState<Movie[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [query, setQuery] = useState<string>('');
-  const [visibleCount, setVisibleCount] = useState<number>(4)
+  const [visibleCount, setVisibleCount] = useState<number>(4);
+  const [isDebouncing, setIsDebouncing] = useState<boolean>(false);
   
   const updateQuery = (newQuery: string) => {
     setQuery(newQuery);
     setVisibleCount(4);
-    setIsLoading(true);
+
+    if (newQuery?.trim() === "") {
+      setIsDebouncing(false) 
+    } else {
+      setIsDebouncing(true); 
+    } 
+  }
+
+  const resetSearch = () => {
+    updateQuery("");
+    setMovies([]);
+    setIsLoading(false);
   }
 
   const searchMovie = useCallback(async (query : string) => {
 
+    setIsDebouncing(false);
     setIsLoading(true);
 
     const data = await getMovies(query);
@@ -41,11 +54,12 @@ export const SearchProvider = ({ children }: {children : ReactNode}) => {
     <MovieSearchContext.Provider value={{
         movies: movies,
         isLoading: isLoading,
+        resetSearch,
         query,
-        setQuery,
         updateQuery,
         visibleCount,
-        setVisibleCount
+        setVisibleCount,
+        isDebouncing,
     }}>
 
       { children }
