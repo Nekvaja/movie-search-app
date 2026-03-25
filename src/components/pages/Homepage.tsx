@@ -3,6 +3,7 @@ import { SearchForm } from "../search/SearchForm"
 import { SearchResults } from "../search/SearchResults"
 import { useSearch } from "../../contexts/SearchGlobal/SearchContext"
 import { StateMessage } from "../search/StateMessage"
+import { EmptySearchState } from "../search/EmptySearchState"
 
 export const Homepage = () => {
 
@@ -16,7 +17,7 @@ export const Homepage = () => {
 
         { (!isLoading && isDebouncing) && <StateMessage>Searching...</StateMessage>}
 
-        { (!query && (!isLoading || !isDebouncing)) && <StateMessage>Start typing to find movies.</StateMessage> }
+        { (!query && (!isLoading || !isDebouncing)) && <EmptySearchState/> }
 
         { ((!movies || movies.length === 0) && query && !isLoading && !isDebouncing ) && <StateMessage>No movies found.</StateMessage>}
 
