@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { MovieIcon } from "./MovieIcon";
+import { useSearch } from "../../contexts/SearchGlobal/SearchContext";
 
-const EmptySearchStateWrapper = styled.div`
+const Wrapper = styled.div`
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -26,6 +27,7 @@ const Subtitle = styled.p`
 
 const TagsWrapper = styled.div`
     display: flex;
+    flex-wrap: wrap;
     gap: 0.5rem;
 `;
 
@@ -40,26 +42,49 @@ const TagButton = styled.button`
     #f3d5c0,
     #e8bfa7
   );
+    cursor: pointer;
+    &:hover {
+        background: linear-gradient(
+    135deg,
+    #f5dcca,
+    #eec6ae
+  );
+    }
 `;
 
 
 
 
 export const EmptySearchState = () => {
+
+    const { updateQuery } = useSearch();
+
     return (
-        <EmptySearchStateWrapper>
+        <Wrapper>
             <HeadingRow>
                     <MovieIcon/>
                     <Title>Find your next movie</Title>
             </HeadingRow>
-            <Subtitle>Search from thousand of movies or try one of these:</Subtitle>
+            <Subtitle>Search from thousands of movies or try one of these:</Subtitle>
             <TagsWrapper>
-                <TagButton>Harry Potter</TagButton>
-                <TagButton>Comedy</TagButton>
-                <TagButton>2024</TagButton>
-                <TagButton>Action</TagButton>
+                <TagButton
+                value="Harry Potter"
+                onClick={(e) => updateQuery(e.currentTarget.value)}
+                >Harry Potter</TagButton>
+                <TagButton
+                value="James Bond"
+                onClick={(e) => updateQuery(e.currentTarget.value)}
+                >James Bond</TagButton>
+                <TagButton
+                value="Matrix"
+                onClick={(e) => updateQuery(e.currentTarget.value)}
+                >Matrix</TagButton>
+                <TagButton
+                value="Dream Team"
+                onClick={(e) => updateQuery(e.currentTarget.value)}
+                >Dream Team</TagButton>
             </TagsWrapper>
-        </EmptySearchStateWrapper>
+        </Wrapper>
         
     )
 }
