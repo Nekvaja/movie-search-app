@@ -5,14 +5,20 @@ import { Link } from "react-router-dom";
 
 const ResultsGrid = styled.div`
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    justify-items: center;
     gap: 2rem;
-    margin: auto 2rem;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    margin-top: 3rem;
+    padding: 0;
 `;
 
 const Button = styled.button`
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 3rem;
+       
+
     width: 80%;
     max-width: 400px;
     border: none;

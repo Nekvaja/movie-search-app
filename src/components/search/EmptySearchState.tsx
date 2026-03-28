@@ -29,6 +29,7 @@ const Subtitle = styled.p`
 const TagsWrapper = styled.div`
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 0.5rem;
 `;
 

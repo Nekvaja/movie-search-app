@@ -4,7 +4,8 @@ import type { Movie } from "../../api/tmdb";
 type MovieCardProps = Pick<Movie, "title" | "year" | "rate" | "imageUrl">;
 
 const Card = styled.article`
-    width: 100%;
+    height: 100%;
+    max-width: 200px;
     display: flex;
     flex-direction: column;
 `;

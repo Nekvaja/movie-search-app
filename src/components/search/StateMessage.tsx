@@ -7,6 +7,7 @@ interface StateMessageProps {
 
 const MessageWrapper = styled.div`
     margin: 2rem;
+    text-align: center;
 `;
 
 export const StateMessage = ({children} : StateMessageProps) => {

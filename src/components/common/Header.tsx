@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useSearch } from "../../contexts/SearchGlobal/SearchContext";
 
 const HeaderContainer = styled.header`
-  height: 152px;
+  height: 120px;
   width: 100%;
   background: linear-gradient(to right, 
     ${({theme}) => theme.colors.primary},

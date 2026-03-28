@@ -5,6 +5,7 @@ import { useSearch } from "../../contexts/SearchGlobal/SearchContext";
 const FormWrapper = styled.form`
     display: flex;
     align-items: center;
+    margin: 0 auto;
     gap: 0.5rem;
     width: 100%;
     max-width: 500px;
