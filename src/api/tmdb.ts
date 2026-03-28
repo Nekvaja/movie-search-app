@@ -135,6 +135,26 @@ export const getMovieById = async (id : number) : Promise<MovieDetailData> => {
     console.log(json)
     console.log(data)
     return data;
+};
+
+
+
+
+export const getPopularMovies = async () => {
+
+    const response = await fetch(`${baseUrl}/movie/popular`, {
+        headers: {
+            Authorization: `Bearer ${import.meta.env.VITE_TMDB_TOKEN}`
+        }
+        });
+
+    const json = await response.json();
+
+    const data : string[] = json.results.slice(0,4).map((popularMovie : ApiMovie) => {
+        return popularMovie.title;
+    })
+
+    return data;
 }
 
 

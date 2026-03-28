@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { MovieIcon } from "./MovieIcon";
 import { useSearch } from "../../contexts/SearchGlobal/SearchContext";
+import { usePopularMovies } from "../../contexts/PopularMovies/PopularMoviesContext";
 
 const Wrapper = styled.div`
     width: 100%;
@@ -33,6 +34,7 @@ const TagsWrapper = styled.div`
 
 const TagButton = styled.button`
     position: relative;
+    max-width: 180px;
     font-size: 1rem;
     border: none;
     border-radius: 50px;
@@ -58,6 +60,9 @@ const TagButton = styled.button`
 export const EmptySearchState = () => {
 
     const { updateQuery } = useSearch();
+    const popularMovies  = usePopularMovies();
+
+    console.log(popularMovies)
 
     return (
         <Wrapper>
@@ -67,22 +72,16 @@ export const EmptySearchState = () => {
             </HeadingRow>
             <Subtitle>Search from thousands of movies or try one of these:</Subtitle>
             <TagsWrapper>
-                <TagButton
-                value="Harry Potter"
-                onClick={(e) => updateQuery(e.currentTarget.value)}
-                >Harry Potter</TagButton>
-                <TagButton
-                value="James Bond"
-                onClick={(e) => updateQuery(e.currentTarget.value)}
-                >James Bond</TagButton>
-                <TagButton
-                value="Matrix"
-                onClick={(e) => updateQuery(e.currentTarget.value)}
-                >Matrix</TagButton>
-                <TagButton
-                value="Dream Team"
-                onClick={(e) => updateQuery(e.currentTarget.value)}
-                >Dream Team</TagButton>
+
+                {
+                    popularMovies.map((popularMovie) => (
+                        <TagButton
+                            key={popularMovie}
+                            value={popularMovie}
+                            onClick={(e) => updateQuery(e.currentTarget.value)}
+                        >{popularMovie}</TagButton>
+                    ))
+                }
             </TagsWrapper>
         </Wrapper>
         
