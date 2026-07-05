@@ -3,8 +3,11 @@ import { Link } from "react-router-dom";
 import { useSearch } from "../../contexts/SearchGlobal/SearchContext";
 
 const HeaderContainer = styled.header`
+  display: flex;  
+  justify-content: space-between;
   height: 100px;
   width: 100%;
+  color: white;
   background: linear-gradient(to right, 
     ${({theme}) => theme.colors.primary},
     ${({theme}) => theme.colors.secondary}
@@ -20,10 +23,15 @@ const HeaderContainer = styled.header`
     }
 `;
 
+const HeaderActions = styled.div`
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+`;
+
 const HeaderTitle = styled.h1`
     font-size: 2.25rem;
     font-weight: 300;
-    color: white;
 
     a {
         font-style: inherit;
@@ -48,6 +56,10 @@ export const Header = () => {
                     onClick={resetSearch}
                     >Movie Search</Link>               
             </HeaderTitle>
+            <HeaderActions>
+                <span>lang</span>
+                <span>theme</span>
+            </HeaderActions>
         </HeaderContainer>
     )
 }

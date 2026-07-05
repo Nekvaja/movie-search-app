@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const FooterContainer = styled.footer`
+const FooterContent = styled.footer`
   height: 80px;
   width: 100%;
   background: linear-gradient(to right,
@@ -8,6 +8,7 @@ const FooterContainer = styled.footer`
     ${({theme}) => theme.colors.secondary}
     );
   display: flex;
+  gap: 2rem;
   justify-content: space-between;
   align-items: center;
   color: white;
@@ -21,28 +22,25 @@ const FooterContainer = styled.footer`
     }
 `;
 
-const FooterLeft = styled.div`
+const FooterAttribution = styled.p`
     
 `;
 
-const FooterRight = styled.div`
-    display: flex;
-    align-items: center;
-    gap: 2rem;
+const FooterCopyright = styled.p`
+  
 `;
 
 
 export const Footer = () => {
     return (
-        <FooterContainer>
-            <FooterLeft>
-                  <p>This product uses the TMDb API but is not endorsed or certified by TMDb.</p>
-            </FooterLeft>
+        <FooterContent>
+            <FooterAttribution>
+                  This product uses the TMDb API but is not endorsed or certified by TMDb.
+            </FooterAttribution>
 
-            <FooterRight>
-                <p>© 2026 Movie Search</p>
-                <span>toggle</span>
-            </FooterRight>
-        </FooterContainer>
+            <FooterCopyright>
+                © 2026 Movie Search
+            </FooterCopyright>
+        </FooterContent>
     )
 }
