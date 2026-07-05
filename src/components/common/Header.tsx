@@ -18,7 +18,7 @@ const HeaderContainer = styled.header`
   padding: 2rem;
 
    @media (max-width: 400px) {
-        height: 80px;
+        height: 70px;
         padding: 1rem;
     }
 `;
@@ -40,7 +40,7 @@ const HeaderTitle = styled.h1`
     }
 
      @media (max-width: 400px) {
-       font-size: 1.5rem;
+       font-size: 1.2rem;
     }
 `;
 

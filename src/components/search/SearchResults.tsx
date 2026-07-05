@@ -14,6 +14,10 @@ const ResultsGrid = styled.div`
      @media (max-width: 400px) {
        margin-top: 2rem;
     }
+
+    @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+}
 `;
 
 const Button = styled.button`
