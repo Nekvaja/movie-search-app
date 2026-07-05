@@ -55,7 +55,9 @@ export const SearchForm = () => {
 
     return (
       
-        <FormWrapper>
+        <FormWrapper
+            onSubmit={(e) => e.preventDefault()}
+        >
           <SearchIcon />
 
           <SearchInput
