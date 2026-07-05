@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useSearch } from "../../contexts/SearchGlobal/SearchContext";
 
 const HeaderContainer = styled.header`
-  height: 120px;
+  height: 100px;
   width: 100%;
   background: linear-gradient(to right, 
     ${({theme}) => theme.colors.primary},
@@ -13,6 +13,11 @@ const HeaderContainer = styled.header`
   display: flex;
   align-items: center;
   padding: 2rem;
+
+   @media (max-width: 400px) {
+        height: 80px;
+        padding: 1rem;
+    }
 `;
 
 const HeaderTitle = styled.h1`
@@ -24,6 +29,10 @@ const HeaderTitle = styled.h1`
         font-style: inherit;
         color: inherit;
         text-decoration: none;
+    }
+
+     @media (max-width: 400px) {
+       font-size: 1.5rem;
     }
 `;
 

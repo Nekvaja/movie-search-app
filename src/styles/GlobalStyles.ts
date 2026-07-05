@@ -10,7 +10,7 @@ export const GlobalStyle = createGlobalStyle<{theme: Theme}>`
   
   body {
     margin: 0;
-    min-height: 100vh;
+    min-height: 100dvh;
     display: flex;
     flex-direction: column;
     background: ${({theme}) => theme.colors.background};
@@ -21,5 +21,6 @@ export const GlobalStyle = createGlobalStyle<{theme: Theme}>`
     display: flex;
     flex-direction: column;
     flex: 1;
+    min-height: 100dvh;
   }
 `;

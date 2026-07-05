@@ -6,12 +6,29 @@ const MovieMainInfoWrapper = styled.div`
     display: flex;
     margin: 2rem;
     gap: 2rem;
+
+    @media (max-width: 900px) {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    @media (max-width: 400px) {
+        margin: 1.5rem 0 2rem 0;
+    }
 `;
 
 const MoviePoster = styled.img`
     aspect-ratio: 2 / 3;
     max-width: 300px;
     object-fit: cover;
+
+    @media (max-width: 900px) {
+        max-width: 500px;
+    }
+
+    @media (max-width: 400px) {
+        max-width: 250px;
+    }
 `;
 
 const MovieDescription = styled.div`
@@ -21,6 +38,10 @@ const MovieDescription = styled.div`
 const GenreWrapper = styled.div`
     display: flex;
     gap: 0.5rem;
+
+    @media (max-width: 400px) {
+        flex-wrap: wrap;
+    }
 `;
 
 const Genre = styled.div`
@@ -36,14 +57,15 @@ const Meta = styled.div`
 `;
 
 const Overview = styled.div`
-    margin-top: 3rem;
+    margin-top: 1.5rem;
     line-height: 1.5;
 `;
 
 const Tagline = styled.div`
-    margin-top: 1rem;
+    margin-top: 2rem;
     color: #717070;
     letter-spacing: 0.05rem;
+    font-size: 1.2rem;
 `;
 
 

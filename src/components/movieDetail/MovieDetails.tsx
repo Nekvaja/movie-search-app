@@ -17,6 +17,10 @@ const MovieDetailsWrapper = styled.div`
     h3, p {
         margin: 0;
     }
+
+    @media (max-width: 400px) {
+  padding: 2rem 0;
+}
 `;
 
 const Infoblock = styled.div`
@@ -24,6 +28,12 @@ const Infoblock = styled.div`
     gap: 1rem;
     align-items: flex-start;
     line-height: 1.5;
+
+  @media (max-width: 400px) {
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
 `;
 
 

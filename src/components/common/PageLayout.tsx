@@ -12,18 +12,23 @@ const Content = styled.main<{$variant: string}>`
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  flex: 1;
-
+  flex-grow: 1;
+  flex-shrink: 0;
 
   padding: ${({ $variant }) =>
   $variant === "default" ? "3rem 1.5rem" : "0.5rem 1.5rem"};
+
+    @media (max-width: 400px) {
+      padding: ${({ $variant }) =>
+      $variant === "default" ? "2rem 1rem" : "0 1rem"};
+  }
 `;
 
 const Inner = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 896px;
+  max-width: 1100px;
   margin: 0 auto;
   flex: 1;
   min-height: 100%;

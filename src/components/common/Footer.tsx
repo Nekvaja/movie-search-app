@@ -14,6 +14,11 @@ const FooterContainer = styled.footer`
   font-size: 1rem;
   font-weight: 300;
   padding: 2rem;
+
+  @media (max-width: 400px) {
+        height: fit-content;
+        padding: 0 1rem;
+    }
 `;
 
 const FooterLeft = styled.div`

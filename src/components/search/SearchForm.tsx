@@ -8,10 +8,10 @@ const FormWrapper = styled.form`
     margin: 0 auto;
     gap: 0.5rem;
     width: 100%;
-    max-width: 500px;
+    max-width: 600px;
     height: 3.5rem;
     border: 2px solid ${({theme}) => theme.colors.primary};
-    border-radius: 8px 0 8px 8px;
+    border-radius: 12px 0 12px 12px;
     background-color: ${({theme}) => theme.colors.background};
     overflow: hidden;
 
@@ -19,6 +19,13 @@ const FormWrapper = styled.form`
         border: solid 2px ${({theme}) => theme.colors.secondary};
         box-shadow: 0 0 0 2px rgba(255, 165, 0, 0.4);
     }
+
+     @media (max-width: 900px) {
+        max-width: 500px;
+        height: 4rem;
+        border: 1.5px solid ${({theme}) => theme.colors.primary};
+    }
+
 `;
 
 const SearchInput = styled.input`

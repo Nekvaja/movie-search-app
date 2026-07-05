@@ -9,12 +9,12 @@ export const SearchProvider = ({ children }: {children : ReactNode}) => {
   const [movies, setMovies] = useState<Movie[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [query, setQuery] = useState<string>('');
-  const [visibleCount, setVisibleCount] = useState<number>(4);
+  const [visibleCount, setVisibleCount] = useState<number>(5);
   const [isDebouncing, setIsDebouncing] = useState<boolean>(false);
   
   const updateQuery = (newQuery: string) => {
     setQuery(newQuery);
-    setVisibleCount(4);
+    setVisibleCount(5);
 
     if (newQuery?.trim() === "") {
       setIsDebouncing(false) 

@@ -10,6 +10,10 @@ const ResultsGrid = styled.div`
     gap: 2rem;
     margin-top: 3rem;
     padding: 0;
+
+     @media (max-width: 400px) {
+       margin-top: 2rem;
+    }
 `;
 
 const Button = styled.button`
@@ -22,7 +26,7 @@ const Button = styled.button`
     width: 80%;
     max-width: 400px;
     border: none;
-    border-radius: 10px;
+    border-radius: 12px;
     background-color: ${({theme}) => theme.colors.primary};
     color: ${({theme}) => theme.colors.textSecondary};
     text-transform: uppercase;
@@ -61,7 +65,7 @@ export const SearchResults = () => {
         </ResultsGrid>
 
         <Button
-            onClick={() => setVisibleCount(prev => prev + 4)}
+            onClick={() => setVisibleCount(prev => prev + 5)}
         >Load more</Button>
         </>
     )
